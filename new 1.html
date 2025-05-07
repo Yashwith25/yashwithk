@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Person with Image</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      padding: 30px;
+    }
+
+    .person-container {
+      background: #fff;
+      border-left: 5px solid #e74c3c;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .toggle-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .toggle-btn:hover {
+      background-color: #c0392b;
+    }
+
+    .person-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0;
+    }
+
+    .person-details.open {
+      max-height: 500px;
+      padding-top: 10px;
+    }
+
+    .person-image {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="person-container">
+  <h2>Adobe Photoshop</h2>
+  <button class="toggle-btn" onclick="toggleDetails(this)"> Details</button>
+  <div class="person-details">
+    <img src="ps.png" alt="PS" class="person-image">
+    <p><strong>Adobe Photoshop is a raster graphic editor</strong></p>
+    <p><strong>Developed and published by Adobe for windows and MacOs</strong></p>
+    <p><strong>Created in 1987 by Thomas and John Knoll</strong></p>
+  </div>
+</div>
+
+<div class="person-container">
+  <h2>GIMP</h2>
+  <button class="toggle-btn" onclick="toggleDetails(this)">Details</button>
+  <div class="person-details">
+    <img src="gimp.png" alt="GIMP" class="person-image">
+    <p><strong>The GNU Image Manipulation Program,commonly known as GIMP.</strong></p>
+    <p><strong>Is a free and open-source raster graphic editor</strong> </p>
+    <p><strong>Commonly used for photo retouching,image editing free-hand drawing etc</strong></p>
+  </div>
+</div>
+
+<script>
+  function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    details.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

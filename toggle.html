@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Person</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .person-container {
+      background: #fff;
+      border: 2px solid #e74c3c;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .person-details {
+      display: none;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .toggle-btn {
+      padding: 10px 20px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+<div class="person-container">
+  <h2>John Doe</h2>
+  <button class="toggle-btn" onclick="toggleDetails()">Toggle Details</button>
+  <div class="person-details" id="details">
+    <p><strong>Age:</strong> 32</p>
+    <p><strong>Blood Group:</strong> O+</p>
+    <p><strong>Email:</strong> john.doe@example.com</p>
+  </div>
+</div>
+
+<script>
+  function toggleDetails() {
+    const details = document.getElementById('details');
+    if (details.style.display === 'none' || details.style.display === '') {
+      details.style.display = 'block';
+    } else {
+      details.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
